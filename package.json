@@ -1,0 +1,11 @@
+{
+  "name": "renovate-config",
+  "private": true,
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "validate": "renovate-config-validator --strict --no-global default.json"
+  },
+  "devDependencies": {
+    "renovate": "43.123.6"
+  }
+}
