@@ -1,6 +1,6 @@
 # renovate-config
 
-Shareable Config Preset for Renovate.
+[Shareable Config Preset](https://docs.renovatebot.com/config-presets/) for Renovate.
 
 ## Usage
 
