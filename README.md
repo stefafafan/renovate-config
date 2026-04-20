@@ -11,3 +11,6 @@ Shareable Config Preset for Renovate.
   ]
 }
 ```
+
+## Reference
+- https://github.com/hatena/renovate-config
