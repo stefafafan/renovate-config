@@ -1,0 +1,18 @@
+{
+  "description": "Update mise runtime versions configured through jdx/mise-action in GitHub Actions workflows.",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)\\.github/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "uses:\\s*jdx/mise-action@[^\\s#]+(?:\\s+#\\s*v?[^\\s#]+)?\\s*\\n(?:[\\t ]+.*\\n){0,20}?[\\t ]+version:\\s*(?<currentValue>[^\\s#]+)"
+      ],
+      "depNameTemplate": "jdx/mise",
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver-coerced",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    }
+  ]
+}

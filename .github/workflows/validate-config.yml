@@ -25,4 +25,9 @@ jobs:
           version: 2026.4.11
 
       - name: Validate config
-        run: npm exec --yes --package=renovate@43.123.6 -- renovate-config-validator --strict --no-global default.json
+        run: |
+          set -euo pipefail
+
+          for file in *.json*; do
+            npm exec --yes --package=renovate@43.123.6 -- renovate-config-validator --strict --no-global "$file"
+          done
