@@ -8,7 +8,7 @@
       ],
       "matchStrings": [
         "(?:npm\\s+exec|npx)\\b[^\\n]*?--package=(?<depName>[@A-Za-z0-9._/-]+)@(?<currentValue>[^\\s\"']+)",
-        "npx\\s+(?![^\\n]*--package=)(?<depName>[@A-Za-z0-9._/-]+)@(?<currentValue>[^\\s\"']+)"
+        "npx\\s+(?<depName>[@A-Za-z0-9._/-]+)@(?<currentValue>[^\\s\"']+)"
       ],
       "datasourceTemplate": "npm"
     }
