@@ -1,0 +1,16 @@
+{
+  "description": "Update npm package versions used through npm exec or npx in GitHub Actions workflows.",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)\\.github/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "(?:npm\\s+exec|npx)\\b[^\\n]*?--package=(?<depName>[@A-Za-z0-9._/-]+)@(?<currentValue>[^\\s\"']+)",
+        "npx\\s+(?<depName>[@A-Za-z0-9._/-]+)@(?<currentValue>[^\\s\"']+)"
+      ],
+      "datasourceTemplate": "npm"
+    }
+  ]
+}
