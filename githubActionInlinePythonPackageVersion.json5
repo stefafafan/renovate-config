@@ -1,0 +1,19 @@
+{
+  "description": "Update PyPI package versions used inline through common Python commands in GitHub Actions workflows.",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)\\.github/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "(?:uv\\s+run|uvx)\\b[^\\n]*?--with\\s+[\"']?(?<depName>[A-Za-z0-9._-]+)==(?<currentValue>[^\\s\"']+)[\"']?",
+        "uv\\s+pip\\s+install\\b[^\\n]*?[\"']?(?<depName>[A-Za-z0-9._-]+)==(?<currentValue>[^\\s\"']+)[\"']?",
+        "pipx\\s+run\\b[^\\n]*?--spec\\s+[\"']?(?<depName>[A-Za-z0-9._-]+)==(?<currentValue>[^\\s\"']+)[\"']?",
+        "pipx\\s+install\\b[^\\n]*?[\"']?(?<depName>[A-Za-z0-9._-]+)==(?<currentValue>[^\\s\"']+)[\"']?",
+        "(?:(?:python|python3)\\s+-m\\s+pip|pip3?|py\\s+-m\\s+pip)\\s+install\\b[^\\n]*?[\"']?(?<depName>[A-Za-z0-9._-]+)==(?<currentValue>[^\\s\"']+)[\"']?"
+      ],
+      "datasourceTemplate": "pypi"
+    }
+  ]
+}

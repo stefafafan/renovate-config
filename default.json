@@ -4,6 +4,7 @@
     "config:recommended",
     "github>stefafafan/renovate-config:githubActionMiseVersion.json5",
     "github>stefafafan/renovate-config:githubActionInlineNpmPackageVersion.json5",
+    "github>stefafafan/renovate-config:githubActionInlinePythonPackageVersion.json5",
   ],
   "minimumReleaseAge": "7 days"
 }
