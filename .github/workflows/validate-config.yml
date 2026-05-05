@@ -29,5 +29,5 @@ jobs:
           set -euo pipefail
 
           for file in *.json*; do
-            npm exec --yes --package=renovate@43.142.0 -- renovate-config-validator --strict --no-global "$file"
+            npm exec --yes --package=renovate@43.145.0 -- renovate-config-validator --strict --no-global "$file"
           done
